@@ -6,6 +6,7 @@
 #include "Dice.h"
 using namespace std;
 int main()
+    // added a lined
 {
 	cout << "Welcome to Monopoly Empire!" << endl << "Enter the number of players(1-4): ";
 
