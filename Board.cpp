@@ -12,7 +12,7 @@
 using namespace std;
 
 Board::Board( int player_num ) {
-
+	// ADDING TO TEST
 	peeps = player_num;
 	Player * set_players[player_num];
 //	set_players[0] = new Player("John");
