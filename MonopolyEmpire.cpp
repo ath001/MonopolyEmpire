@@ -11,6 +11,9 @@ int main()
     // Added Anthony
     // testing second time
     // another change
+    // testing
+    // Addeding conflict
+	//change
 {
 	cout << "Welcome to Monopoly Empire!" << endl << "Enter the number of players(1-4): ";
 	
