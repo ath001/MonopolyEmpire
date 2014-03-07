@@ -12,7 +12,8 @@
 using namespace std;
 
 Board::Board( int player_num ) {
-
+	//testing GIT branch
+	//TESTING GIT BRANCH two
 	peeps = player_num;
 	Player * set_players[player_num];
 //	set_players[0] = new Player("John");
