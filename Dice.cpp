@@ -18,7 +18,7 @@ Dice::Dice() {
 
 }
 
-int Dice::Roll( std::string name ){
+int Dice::Roll( string name ){
 	int dice1 = rand() % 6 + 1;
 	int dice2 = rand() % 6 + 1;
 	int sneaky_swap = -1;

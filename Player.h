@@ -16,17 +16,18 @@ private:
 	string name;
 	int money;
 	int position;
-	Tower * tower;
+	Tower *tower;
 
 public:
 	Player( string input );
 	virtual ~Player();
 	string getName();
 	int getPosition();
-	void setPostion( int move );
+	void setPostion( int );
 	int getTowerValue();
-	void changeMoney( int amount );
+	void changeMoney( int );
 	int getMoney();
+	void setGlobal(int);
 };
 
 #endif /* PLAYER_H_ */
