@@ -15,7 +15,7 @@ Player::Player( string input ) {
 	tower = new Tower();
 	money = 1000;
 	name = (input);
-	position= 0;
+	position = 0;
 }
 
 Player::~Player() {
@@ -43,9 +43,16 @@ int Player::getPosition() {
 int Player::getTowerValue() {
 	return tower->getValue();
 }
+
 void Player::changeMoney( int amount ) {
-	money+= amount;
+	money += amount;
 }
+
 int Player::getMoney() {
 	return money;
+}
+
+void Player::setGlobal(int newPosition)
+{
+	position = newPosition;
 }

@@ -8,14 +8,17 @@
 #ifndef SPACE_H_
 #define SPACE_H_
 #include <string>
+#include "Player.h"
+using namespace std;
+
 class Space {
 //  protected:
 //	int spot;
 //	std::string title;
 
   public:
-	Space( int, std::string);
-    virtual void landOn(void){};
+	Space( int, string);
+    virtual void landOn(Player&){};
     virtual void print(void){};
 	virtual ~Space();
 	int spot;
@@ -156,7 +159,7 @@ public:
 class FreeParking: public Space {
 public:
 	FreeParking( int a, std::string b ) : Space(a,b){}
-	void landOn();
+	void landOn(Player&);
 	void print();
 };
 

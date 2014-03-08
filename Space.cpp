@@ -6,6 +6,7 @@
  */
 
 #include "Space.h"
+#include "Player.h"
 #include <string>
 #include <iostream>
 using namespace std;
@@ -88,9 +89,6 @@ void Yahoo::landOn() {
 	std::cout << "LAND ON YAHOO!" << endl;
 }
 
-void FreeParking::landOn() {
-	std::cout << "LAND ON FREE PARKING" << endl;
-}
 
 void Paramount::landOn() {
 	std::cout << "LAND ON PARAMOUNT" << endl;
@@ -217,10 +215,6 @@ void Carnival::print() {
 
 void Yahoo::print() {
 	std::cout << "LAND ON YAHOO!";
-}
-
-void FreeParking::print() {
-	std::cout << "LAND ON FREE PARKING";
 }
 
 void Paramount::print() {
