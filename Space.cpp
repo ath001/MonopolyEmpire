@@ -13,6 +13,7 @@ using namespace std;
 
 Space::Space( int place, std::string name ) : spot(place), title(name) {};
 Ownable::Ownable( int place, std::string name ) : Space(place,name){};
+int Ownable::owner = -1;
 Space::~Space() {
 	// TODO Auto-generated destructor stub
 }
@@ -24,38 +25,27 @@ void Go::landOn() {
 	std::cout << "LAND ON GO" << endl;
 }
 
-void Nerf::landOn() {
-	std::cout << "LAND ON NERF"<< endl;
-	Nerf::buy();
-}
+
 
 void RivalTowerTax::landOn() {
 	std::cout << "LAND ON RIVAL TOWER TAX" << endl;
 }
 
-void Transformers::landOn() {
-	std::cout << "LAND ON TRANSFORMERS" << endl;
-}
+
 
 void EmpireSpace::landOn() {
 	std::cout << "LAND ON EMPIRE SPACE" << endl;
 }
 
-void Spotify::landOn() {
-	std::cout << "LAND ON SPOTIFY" << endl;
-}
+
 
 void Chance::landOn() {
 	std::cout << "LAND ON CHANCE" << endl;
 }
 
-void Beats::landOn() {
-	std::cout << "LAND ON BEATS" << endl;
-}
 
-void Fender::landOn() {
-	std::cout << "LAND ON FENDER" << endl;
-}
+
+
 
 void JustVisiting::landOn() {
 	std::cout << "LAND ON JUST VISITING" << endl;
@@ -153,37 +143,26 @@ void Go::print() {
 	std::cout << "LAND ON GO";
 }
 
-void Nerf::print() {
-	std::cout << "LAND ON NERF";
-}
+
 
 void RivalTowerTax::print() {
 	std::cout << "LAND ON RIVAL TOWER TAX";
 }
 
-void Transformers::print() {
-	std::cout << "LAND ON TRANSFORMERS";
-}
+
 
 void EmpireSpace::print() {
 	std::cout << "LAND ON EMPIRE SPACE";
 }
 
-void Spotify::print() {
-	std::cout << "LAND ON SPOTIFY";
-}
+
 
 void Chance::print() {
 	std::cout << "LAND ON CHANCE";
 }
 
-void Beats::print() {
-	std::cout << "LAND ON BEATS";
-}
 
-void Fender::print() {
-	std::cout << "LAND ON FENDER";
-}
+
 
 void JustVisiting::print() {
 	std::cout << "LAND ON JUST VISITING";
@@ -273,7 +252,5 @@ void CocaCola::print() {
 	std::cout << "LAND ON COCA COLA";
 }
 
-void Nerf::buy() {
-	std::cout << "BUYING" ;
-}
+
 

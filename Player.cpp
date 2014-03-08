@@ -52,6 +52,10 @@ int Player::getMoney() {
 	return money;
 }
 
+Tower* Player::getTower() {
+	return tower;
+}
+
 void Player::setGlobal(int newPosition)
 {
 	position = newPosition;

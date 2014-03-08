@@ -16,7 +16,7 @@ private:
 	string name;
 	int money;
 	int position;
-	Tower *tower;
+	Tower * tower;
 
 public:
 	Player( string input );
@@ -28,6 +28,7 @@ public:
 	void changeMoney( int );
 	int getMoney();
 	void setGlobal(int);
+	Tower * getTower();
 };
 
 #endif /* PLAYER_H_ */

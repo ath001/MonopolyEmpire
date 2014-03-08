@@ -7,7 +7,7 @@ using namespace std;
 void FreeParking::landOn(Player &curPlayer) {
 	int ans;
 	int destination;
-	cout << "LAND ON FREE PARKING" << endl;
+	FreeParking::print();
 	cout << "Do you want to pay 100 to move to any space? "
 	     << "1.Yes "
 		 << "2.No";

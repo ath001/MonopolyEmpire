@@ -9,6 +9,7 @@
 #define SPACE_H_
 #include <string>
 #include "Player.h"
+#include "BillBoard.h"
 using namespace std;
 
 class Space {
@@ -33,6 +34,8 @@ class Space {
 	Ownable(int, std::string);
 	virtual void buy(void){};
 	virtual ~Ownable();
+	virtual BillBoard* getBillBoard(void){};
+	static int owner;
 };
 	
 class Go: public Space {
@@ -43,11 +46,14 @@ public:
 };
 
 class Nerf: public Ownable {
+	BillBoard * bboard;
+
 public:
-	Nerf( int a, std::string b ) : Ownable(a,b){}
-	void landOn();
+	Nerf( int, std::string, int );
+	void landOn(Player&);
 	void print();
-	void buy();
+	void buy(Player&);
+	BillBoard * getBillBoard();
 };
 
 
@@ -58,11 +64,14 @@ public:
 	void print();
 };
 
-class Transformers: public Space {
+class Transformers: public Ownable {
 public:
-	Transformers( int a, std::string b ) : Space(a,b){}
+	Transformers( int brand, std::string name, int value ) : Ownable(brand,name){
+		BillBoard * bboard = new BillBoard( brand, value);
+	}
 	void landOn();
 	void print();
+	void buy();
 };
 
 class EmpireSpace: public Space {
@@ -74,16 +83,22 @@ public:
 
 class Spotify: public Space {
 public:
-	Spotify( int a, std::string b ) : Space(a,b){}
+	Spotify( int brand, std::string name, int value ) : Space(brand,name){
+		BillBoard * bboard = new BillBoard( brand, value );
+	}
 	void landOn();
 	void print();
+	void buy();
 };
 
 class Beats: public Space {
 public:
-	Beats( int a, std::string b ) : Space(a,b){}
+	Beats( int brand, std::string name, int value ) : Space(brand,name){
+		BillBoard * bboard = new BillBoard( brand, value );
+	}
 	void landOn();
 	void print();
+	void buy();
 };
 
 class Chance: public Space {
@@ -95,9 +110,12 @@ public:
 
 class Fender: public Space {
 public:
-	Fender( int a, std::string b ) : Space(a,b){}
+	Fender( int brand, std::string name, int value ) : Space(brand,name){
+		BillBoard * bboard = new BillBoard( brand, value);
+	}
 	void landOn();
 	void print();
+	void buy();
 };
 
 class JustVisiting: public Space {

@@ -59,14 +59,14 @@ Board::Board( int player_num ) {
 	string str35 = "COCA COLA";
 
 	Space * space0 = new Go( 0, str0 );
-	Space * space1 = new Nerf( 1, str1 );
+	Space * space1 = new Nerf( 1, str1, 1 );
 	Space * space2 = new RivalTowerTax( 3, str2 );
-	Space * space3 = new Transformers( 3, str3 );
+	Space * space3 = new Transformers( 3, str3, 1 );
 	Space * space4 = new EmpireSpace( 4, str4 );
-	Space * space5 = new Spotify( 5, str5 );
+	Space * space5 = new Spotify( 5, str5, 1 );
 	Space * space6 = new Chance( 6, str6 );
-	Space * space7 = new Beats( 7, str7 );
-	Space * space8 = new Fender( 8, str8 );
+	Space * space7 = new Beats( 7, str7, 1 );
+	Space * space8 = new Fender( 8, str8, 1 );
 	Space * space9 = new JustVisiting( 9, str9 );
 	Space * space10 = new JetBlue( 10, str10 );
 	Space * space11 = new EA( 11, str11 );

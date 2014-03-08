@@ -6,7 +6,7 @@
  */
 
 #include "Tower.h"
-
+#include <iostream>
 Tower::Tower() : current_height(0) {
 
 	TowerHeight[0] = 50;
@@ -27,6 +27,7 @@ Tower::Tower() : current_height(0) {
 	TowerHeight[15] = 750;
 	TowerHeight[16] = 800;
 
+	stack<BillBoard> Top_BillBoard;
 
 
 
@@ -40,9 +41,16 @@ int Tower:: getHeight() {
 void Tower:: setHeight( int change ) {
 	current_height += change;
 }
-int Tower:: getValue() {
+int	 Tower:: getValue() {
 	return TowerHeight[current_height+1];
 
+}
+
+void Tower:: setBillBoard( BillBoard &bboard ) {
+	cout << "SETBILLBOARD";
+	Top_BillBoard.push( bboard );
+ 	std::cout << "size: " << Top_BillBoard.size() << '\n';
+ 	// cout << Top_BillBoard.top().getValue();
 }
 Tower::~Tower() {
 	// TODO Auto-generated destructor stub

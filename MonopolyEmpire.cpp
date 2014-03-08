@@ -4,6 +4,7 @@
 #include "Board.h"
 #include "Space.h"
 #include "Dice.h"
+#include "BillBoard.h"
 using namespace std;
 int main()
     // added a lined
@@ -19,11 +20,15 @@ int main()
 	
 	int round = 0;
 	int num_players = 0;
-	cin >> num_players;
 
-	while (num_players <= 1 || num_players > 4) {
-		cout << "Error-Please in type a number between 1 and 4: ";
-		cin >> num_players;
+	while (scanf("%d", &num_players) == 0 || num_players > 4 || num_players < 1) {
+		printf("Error-Please in type a number between 1 and 4: ");
+		do {
+			num_players = getchar();
+		}
+		while (!isdigit(num_players) );
+		ungetc( num_players, stdin);
+		//consume non-numeric chars from buffer
 	}
 
 	Board * board= new Board( num_players ); // Start the game with this many players
@@ -34,6 +39,19 @@ int main()
 	cout << "GAME STARTED!" << endl;
 	Player **player = board->getPlayer();
 	cout << board->players[0]->getTowerValue() <<"HOW MUCH";
+
+	BillBoard * bb = new BillBoard( 2, 1);
+	Nerf * owning = new Nerf( 1, "NERF", 1);
+	cout << bb->getValue()<< "MOTHERFUCKER"<<endl;
+	
+	// cout <<  owning->getBillBoard()->getValue() << "HERE" << endl;
+	owning->landOn(*player[round]);
+
+
+
+
+// cout << board->players[0]->getTower()->setBillBoard(board->spaces[1]->bboard )<< "HERE";
+		// cout << owning->bboard->getValue << "HERE" << endl;
 
 	for (int i=0; i<100; i++)
 	{
