@@ -10,9 +10,12 @@
 #include <iostream>
 using namespace std;
 
-Space::Space( int place, std::string name ) : spot(place), title(name) {}
-
+Space::Space( int place, std::string name ) : spot(place), title(name) {};
+Ownable::Ownable( int place, std::string name ) : Space(place,name){};
 Space::~Space() {
+	// TODO Auto-generated destructor stub
+}
+Ownable::~Ownable() {
 	// TODO Auto-generated destructor stub
 }
 
@@ -22,6 +25,7 @@ void Go::landOn() {
 
 void Nerf::landOn() {
 	std::cout << "LAND ON NERF"<< endl;
+	Nerf::buy();
 }
 
 void RivalTowerTax::landOn() {
@@ -275,5 +279,7 @@ void CocaCola::print() {
 	std::cout << "LAND ON COCA COLA";
 }
 
-
+void Nerf::buy() {
+	std::cout << "BUYING" ;
+}
 

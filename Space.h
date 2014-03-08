@@ -25,7 +25,13 @@ class Space {
 //    virtual void print() =0;
 };
 
-
+  class Ownable : public Space {
+  public:
+	Ownable(int, std::string);
+	virtual void buy(void){};
+	virtual ~Ownable();
+};
+	
 class Go: public Space {
 public:
 	Go( int a, std::string b ) : Space(a,b){}
@@ -33,11 +39,12 @@ public:
 	void print();
 };
 
-class Nerf: public Space {
+class Nerf: public Ownable {
 public:
-	Nerf( int a, std::string b ) : Space(a,b){}
+	Nerf( int a, std::string b ) : Ownable(a,b){}
 	void landOn();
 	void print();
+	void buy();
 };
 
 
