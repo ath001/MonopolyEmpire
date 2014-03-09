@@ -36,6 +36,7 @@ class Space {
 	virtual ~Ownable();
 	virtual BillBoard* getBillBoard(void){};
 	static int owner;
+	bool owned;
 };
 	
 class Go: public Space {
@@ -65,13 +66,13 @@ public:
 };
 
 class Transformers: public Ownable {
+	BillBoard * bboard;
 public:
-	Transformers( int brand, std::string name, int value ) : Ownable(brand,name){
-		BillBoard * bboard = new BillBoard( brand, value);
-	}
-	void landOn();
+	Transformers( int, std::string, int);
+	void landOn(Player&);
 	void print();
-	void buy();
+	void buy(Player&);
+	BillBoard * getBillBoard();
 };
 
 class EmpireSpace: public Space {
@@ -81,20 +82,20 @@ public:
 	void print();
 };
 
-class Spotify: public Space {
+class Spotify: public Ownable {
+	BillBoard * bboard;
 public:
-	Spotify( int brand, std::string name, int value ) : Space(brand,name){
-		BillBoard * bboard = new BillBoard( brand, value );
-	}
-	void landOn();
+	Spotify( int, std::string, int);
+	void landOn(Player&);
 	void print();
-	void buy();
+	void buy(Player&);
+	BillBoard * getBillBoard();
 };
 
 class Beats: public Space {
 public:
 	Beats( int brand, std::string name, int value ) : Space(brand,name){
-		BillBoard * bboard = new BillBoard( brand, value );
+		// BillBoard * bboard = new BillBoard( brand, name, *this );
 	}
 	void landOn();
 	void print();
@@ -111,7 +112,6 @@ public:
 class Fender: public Space {
 public:
 	Fender( int brand, std::string name, int value ) : Space(brand,name){
-		BillBoard * bboard = new BillBoard( brand, value);
 	}
 	void landOn();
 	void print();
@@ -268,7 +268,7 @@ public:
 class TowerTax: public Space {
 public:
 	TowerTax( int a, std::string b ) : Space(a,b){}
-	void landOn();
+	void landOn(Player&);
 	void print();
 };
 

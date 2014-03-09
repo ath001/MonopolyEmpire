@@ -42,11 +42,12 @@ void Tower:: setHeight( int change ) {
 	current_height += change;
 }
 int	 Tower:: getValue() {
-	return TowerHeight[current_height+1];
+	return TowerHeight[current_height];
 
 }
 
-void Tower:: setBillBoard( BillBoard &bboard ) {
+void Tower:: setBillBoard( BillBoard *bboard ) {
+	// cout << bboard->owned << "REMEMBERS";
 	cout << "SETBILLBOARD";
 	Top_BillBoard.push( bboard );
  	std::cout << "size: " << Top_BillBoard.size() << '\n';

@@ -8,15 +8,33 @@ using namespace std;
 
 
 Nerf::Nerf( int brand, std::string name, int value ) : Ownable( brand, name){
-		bboard = new BillBoard( value, brand );	
+		bboard = new BillBoard( value, name, owned );	
+		// cout<< this << "THISSSSS" << endl ;
+		// cout<< this.owned << "THISISS2222";
 	}
 void Nerf::buy(Player& curPlayer) {
-	std::cout << "BUY" ;
+	int ans;
+
+	std::cout << "Do you want to buy " <<title << " for 50?" << endl ;
+
+	cout << "1. Yes 2. No" << endl;
+	cin >> ans;
+
+	if ( ans == 1 ) {
+		cout << "You bought " << title << "." << endl;
+		curPlayer.changeMoney( -50 );
+			curPlayer.getTower()->setBillBoard( ( bboard) );
+		curPlayer.getTower()->setHeight( (*bboard).getValue() );
+		cout << (*bboard).getValue() << "VALUE" << endl ;
+		cout << curPlayer.getTower()->getHeight() << "HEIGHT" << endl;	
+		owned = true;
+	} else {
+		cout << curPlayer.getName() << " did not buy " << title << "." << endl;
+	}
 	// std::cout << bboard->getValue() << 	"HERE";
 	// curPlayer.getTower()->Top_BillBoard.top();
-	curPlayer.getTower()->setBillBoard( ( *bboard) );
-	curPlayer.getTower()->setHeight( (*bboard).getValue() );
-	cout << (*bboard).getValue() << "VALUE" << endl ;
+
+
 }
 
 void Nerf::print() {
@@ -25,7 +43,9 @@ void Nerf::print() {
 
 void Nerf::landOn(Player& 	curPlayer) {
 	std::cout << "LAND ON NERF"<< endl;
-	buy(curPlayer);
+	if ( owned == false ) {
+		buy(curPlayer);
+	}
 }
 BillBoard* Nerf::getBillBoard() {
 	return bboard;

@@ -1,16 +1,51 @@
 #include <iostream>
 #include <stdio.h>
 #include "Space.h"
+#include "Tower.h"
 using namespace std;
 
-void Spotify::buy() {
-	std::cout << "BUY" << endl ;
+
+
+
+Spotify::Spotify( int brand, std::string name, int value ) : Ownable( brand, name){
+		bboard = new BillBoard( value, name, owned );	
+	}
+void Spotify::buy(Player& curPlayer) {
+	int ans;
+
+	std::cout << "Do you want to buy " <<title << " for 50?" << endl ;
+
+	cout << "1. Yes 2. No" << endl;
+	cin >> ans;
+
+	if ( ans == 1 ) {
+		cout << "You bought " << title << "." << endl;
+		curPlayer.changeMoney( -50 );
+			curPlayer.getTower()->setBillBoard( ( bboard) );
+		curPlayer.getTower()->setHeight( (*bboard).getValue() );
+		cout << (*bboard).getValue() << "VALUE" << endl ;
+		cout << curPlayer.getTower()->getHeight() << "HEIGHT" << endl;	
+		owned = true;
+
+	} else {
+		cout << curPlayer.getName() << " did not buy " << title << "." << endl;
+	}
+	// std::cout << bboard->getValue() << 	"HERE";
+	// curPlayer.getTower()->Top_BillBoard.top();
+
+
 }
 
 void Spotify::print() {
-	std::cout << "LAND ON SPOTIFY"<< endl;
+	std::cout << "LAND ON Spotify";
 }
 
-void Spotify::landOn() {
-	Spotify::buy();
+void Spotify::landOn(Player& 	curPlayer) {
+	std::cout << "LAND ON Spotify"<< endl;
+	if ( owned == false ) {
+		buy(curPlayer);
+	}
+}
+BillBoard* Spotify::getBillBoard() {
+	return bboard;
 }

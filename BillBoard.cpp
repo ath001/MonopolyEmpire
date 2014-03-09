@@ -1,13 +1,21 @@
 #include "BillBoard.h"
+#include <string>
 
-BillBoard::BillBoard( int ValueOf, int BrandOf ) : value(ValueOf), brand(BrandOf){};
+BillBoard::BillBoard( int ValueOf, string NameOf, bool& owned ) : value(ValueOf), name(NameOf) {
+	reset = &owned;
+};
 
 int BillBoard::getValue() {
 	return value;
 }
 
-int BillBoard::getBrand() {
-	return brand;
+
+string BillBoard::getName() {
+	return name;
 }
+
+void BillBoard::setStatus( bool set) {
+	(*reset) = set;
+} 
 
 BillBoard::~BillBoard() {}

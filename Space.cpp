@@ -12,7 +12,9 @@
 using namespace std;
 
 Space::Space( int place, std::string name ) : spot(place), title(name) {};
-Ownable::Ownable( int place, std::string name ) : Space(place,name){};
+Ownable::Ownable( int place, std::string name ) : Space(place,name){
+	owned = false;
+};
 int Ownable::owner = -1;
 Space::~Space() {
 	// TODO Auto-generated destructor stub
@@ -27,9 +29,7 @@ void Go::landOn() {
 
 
 
-void RivalTowerTax::landOn() {
-	std::cout << "LAND ON RIVAL TOWER TAX" << endl;
-}
+
 
 
 
@@ -128,9 +128,6 @@ void Samsung::landOn() {
 	std::cout << "LAND ON SAMSUNG" << endl;
 }
 
-void TowerTax::landOn() {
-	std::cout << "LAND ON TOWER TAX" << endl;
-}
 
 void CocaCola::landOn() {
 	std::cout << "LAND ON COCA COLA" << endl;
@@ -244,9 +241,7 @@ void Samsung::print() {
 	std::cout << "LAND ON SAMSUNG";
 }
 
-void TowerTax::print() {
-	std::cout << "LAND ON TOWER TAX";
-}
+
 
 void CocaCola::print() {
 	std::cout << "LAND ON COCA COLA";

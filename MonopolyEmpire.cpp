@@ -40,13 +40,16 @@ int main()
 	Player **player = board->getPlayer();
 	cout << board->players[0]->getTowerValue() <<"HOW MUCH";
 
-	BillBoard * bb = new BillBoard( 2, 1);
-	Nerf * owning = new Nerf( 1, "NERF", 1);
-	cout << bb->getValue()<< "MOTHERFUCKER"<<endl;
+	/*Nerf * owning = new Nerf( 1, "NERF", 1);
+	TowerTax * towertax = new TowerTax(3, "TowerTax");
 	
-	// cout <<  owning->getBillBoard()->getValue() << "HERE" << endl;
-	owning->landOn(*player[round]);
+	cout << owning->owned << "INITIAL CHECK"<< endl;
 
+	owning->landOn(*player[round]);
+	cout << owning->owned << "MIDDLE CHECK"<< endl;
+	towertax->landOn(*player[round]);
+	cout << owning->owned << "CHECK AFTER" << endl;
+	*/
 
 
 
