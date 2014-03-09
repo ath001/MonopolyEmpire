@@ -27,7 +27,7 @@ Tower::Tower() : current_height(0) {
 	TowerHeight[15] = 750;
 	TowerHeight[16] = 800;
 
-	stack<BillBoard> Top_BillBoard;
+	stack<BillBoard*> Top_BillBoard;
 
 
 
@@ -52,6 +52,14 @@ void Tower:: setBillBoard( BillBoard *bboard ) {
 	Top_BillBoard.push( bboard );
  	std::cout << "size: " << Top_BillBoard.size() << '\n';
  	// cout << Top_BillBoard.top().getValue();
+}
+
+// stack<BillBoard> Tower:: getBillBoard() {
+// 	return Top_BillBoard;
+// }
+
+BillBoard* Tower:: getTopBillBoard() {
+	return Top_BillBoard.top();
 }
 Tower::~Tower() {
 	// TODO Auto-generated destructor stub

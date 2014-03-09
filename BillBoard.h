@@ -2,7 +2,7 @@
 #define BILLBOARD_H_
 #include <string>
 
-class Space;
+// class Space;
 
 using namespace std;
 class BillBoard {

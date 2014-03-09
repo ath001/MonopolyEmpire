@@ -19,6 +19,8 @@ public:
 	void setHeight( int change );
 	int getValue();
 	void setBillBoard( BillBoard * bboard);
+	BillBoard* getTopBillBoard();
+	// stack<BillBoard> getBillBoard();
 
 	stack<BillBoard*> Top_BillBoard;
 

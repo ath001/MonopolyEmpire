@@ -8,11 +8,18 @@
 #ifndef DICE_H_
 #define DICE_H_
 #include <string>
+#include "Player.h"
+
+// class Player;
 
 class Dice {
+	bool is_double;
+	bool sneaky_swapping;
 public:
 	Dice();
-	int Roll( std::string );
+	int Roll( Player* );
+	bool isDouble();
+	bool isSneaky();
 };
 
 #endif /* DICE_H_ */

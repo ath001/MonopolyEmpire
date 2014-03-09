@@ -51,21 +51,39 @@ int main()
 	cout << owning->owned << "CHECK AFTER" << endl;
 	*/
 
-
-
 // cout << board->players[0]->getTower()->setBillBoard(board->spaces[1]->bboard )<< "HERE";
 		// cout << owning->bboard->getValue << "HERE" << endl;
+
+
 
 	for (int i=0; i<100; i++)
 	{
 		round = round % board->peeps;
-		int num_rolled = dice.Roll( player[round]->getName() );
+		int num_rolled = dice.Roll( player[round] );
+
+		if ( dice.isSneaky() == false ) {
 		cout << player[round]->getName() << " moves " << num_rolled << " spaces: ";
 		player[round]->setPostion (num_rolled);
 //	cout << board->players[round]->getPosition() << "CURRENT";
 		board->spaces[player[round]->getPosition()]->landOn(*player[round]);
 		cout << player[round]->getMoney()<< "and " << player[round]->getPosition()<<endl;
-		round++;
+			if ( dice.isDouble() == false ) {
+				round++;
+			} else {
+				cout << player[round]->getName() << " rolled a double!" << endl;
+			}
+		} else {
+			cout << "SNEAKY SWAPPING" << endl << "Choose a player:" << endl; 
+
+			for ( int x = 0; x<board->peeps; x++ ) {
+				if ( x != round ) {
+					cout << x << "." << player[x]->getName()<< endl;
+				}
+			}
+			int choose;
+			cin >> choose;
+			player[round]->sneakySwap(*player[choose]);
+		}
 	}
 //	space0->landOn();
 //	a.bar = 3;

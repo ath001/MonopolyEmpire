@@ -29,6 +29,7 @@ public:
 	int getMoney();
 	void setGlobal(int);
 	Tower * getTower();
+	void sneakySwap(Player&);
 };
 
 #endif /* PLAYER_H_ */
