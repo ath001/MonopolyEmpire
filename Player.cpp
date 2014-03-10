@@ -58,15 +58,22 @@ Tower* Player::getTower() {
 void Player::sneakySwap(Player& choosen ) {
 	// cout << this->name << "PRINTING NAME" << endl;
 	// tower->setBillBoard( choosen.getTower()->getTopBillBoard() );
-	cout << "BEFORE : " << tower->getHeight() << endl;
-	tower->setBillBoard( choosen.getTower()->Top_BillBoard.top() );
-	tower->setHeight( choosen.getTower()->Top_BillBoard.top()->getValue() );
-	cout << "GAINED : " << tower->getHeight() << endl;
+	if ( !( choosen.getTower()->Top_BillBoard.empty() ) ) {
+		cout << "BEFORE : " << tower->getHeight() << endl;
+		tower->setBillBoard( choosen.getTower()->Top_BillBoard.top() );
+		tower->setHeight( choosen.getTower()->Top_BillBoard.top()->getValue() );
+		cout << "GAINED : " << tower->getHeight() << endl;
+		cout << name << " acquired " << choosen.getName() <<"'s " <<  choosen.getTower()->Top_BillBoard.top()->getName() << "billbaord.";
 
-	cout << "BEFORE : " << choosen.getTower()->getHeight() << endl;
-	choosen.getTower()->setHeight( -( tower->Top_BillBoard.top()->getValue() ) );
-	choosen.getTower()->Top_BillBoard.pop();
-	cout << "LOST : " << choosen.getTower()->getHeight() << endl;
+
+		cout << "BEFORE : " << choosen.getTower()->getHeight() << endl;
+		choosen.getTower()->setHeight( -( tower->Top_BillBoard.top()->getValue() ) );
+		choosen.getTower()->Top_BillBoard.pop();
+		cout << "LOST : " << choosen.getTower()->getHeight() << endl;
+
+	} else {
+		cout << choosen.name << " does not have any billboards." << endl;
+	}
 
 
 }

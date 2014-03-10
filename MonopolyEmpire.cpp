@@ -58,6 +58,7 @@ int main()
 
 	for (int i=0; i<100; i++)
 	{
+		int count = 0;
 		round = round % board->peeps;
 		int num_rolled = dice.Roll( player[round] );
 
@@ -76,13 +77,23 @@ int main()
 			cout << "SNEAKY SWAPPING" << endl << "Choose a player:" << endl; 
 
 			for ( int x = 0; x<board->peeps; x++ ) {
-				if ( x != round ) {
-					cout << x << "." << player[x]->getName()<< endl;
+				if ( x != round && !player[x]->getTower()->Top_BillBoard.empty() ) {
+					cout << x << "." << player[x]->getName() << "  (" << player[x]->getTower()->Top_BillBoard.top()->getName() << ")" << endl;
+				} else {
+					count++;
+				}
+				if ( count == board->peeps ) {
+					cout << "No Player to Swap." << endl;
 				}
 			}
+
 			int choose;
-			cin >> choose;
-			player[round]->sneakySwap(*player[choose]);
+			if ( (count) != ( board-> peeps) ) {
+				cin >> choose;
+				cout << "THIS IS CHOOOSE:" << choose << endl;
+				player[round]->sneakySwap(*player[choose]);
+			}
+			round++;
 		}
 	}
 //	space0->landOn();
