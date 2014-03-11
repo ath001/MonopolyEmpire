@@ -18,7 +18,11 @@ Board::Board( int player_num ) {
 	peeps = player_num;
 	Player * set_players[player_num];
 //	set_players[0] = new Player("John");
+
+
 	players = set_players;
+
+// int Board:: peeps = player_num;
 
 //	std::cout << "I'm IN " << endl;
 	string str0 = "GO";
@@ -147,7 +151,7 @@ void Board::addNames() {
 //	}
 
 	for ( int x=0; x<peeps; x++ ) {
-		players[x] = new Player( string_name[x] );
+		players[x] = new Player( string_name[x], &players, peeps );
 	}
 
 //	while (scanf("%d", &num_players) == 0 ) {

@@ -10,11 +10,13 @@
 #include <iostream>
 using namespace std;
 
-Player::Player( string input ) {
+Player::Player( string input, Player*** array_player, int player_num ) {
 	tower = new Tower();
 	money = 1000;
 	name = (input);
 	position = 0;
+	players = **array_player;
+	num_player = player_num;
 }
 
 Player::~Player() {
@@ -77,6 +79,11 @@ void Player::sneakySwap(Player& choosen ) {
 
 
 }
+
+Player* Player::getPlayers(){
+	return players;
+}
+
 void Player::setGlobal(int newPosition)
 {
 	position = newPosition;

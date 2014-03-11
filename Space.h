@@ -61,7 +61,7 @@ public:
 class RivalTowerTax: public Space {
 public:
 	RivalTowerTax( int a, std::string b ) : Space(a,b){}
-	void landOn();
+	void landOn(Player&);
 	void print();
 };
 

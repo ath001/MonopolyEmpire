@@ -133,6 +133,9 @@ void CocaCola::landOn() {
 	std::cout << "LAND ON COCA COLA" << endl;
 }
 
+// void RivalTowerTax::landOn() {
+
+// }
 
 
 
@@ -142,9 +145,9 @@ void Go::print() {
 
 
 
-void RivalTowerTax::print() {
-	std::cout << "LAND ON RIVAL TOWER TAX";
-}
+// void RivalTowerTax::print() {
+// 	std::cout << "LAND ON RIVAL TOWER TAX" << endl;
+// }
 
 
 

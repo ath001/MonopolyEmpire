@@ -17,9 +17,11 @@ private:
 	int money;
 	int position;
 	Tower * tower;
+	Player * players;
+	int num_player;
 
 public:
-	Player( string input );
+	Player( string input, Player***, int );
 	virtual ~Player();
 	string getName();
 	int getPosition();
@@ -30,6 +32,7 @@ public:
 	void setGlobal(int);
 	Tower * getTower();
 	void sneakySwap(Player&);
+	Player * getPlayers();
 };
 
 #endif /* PLAYER_H_ */

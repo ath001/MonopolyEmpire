@@ -84,6 +84,9 @@ int main()
 				}
 				if ( count == board->peeps ) {
 					cout << "No Player to Swap." << endl;
+					cout << player[round]->getName() << " moves " << num_rolled << " spaces: ";
+					board->spaces[player[round]->getPosition()]->landOn(*player[round]);
+					cout << player[round]->getMoney()<< "and " << player[round]->getPosition()<<endl;
 				}
 			}
 
@@ -95,6 +98,7 @@ int main()
 			}
 			round++;
 		}
+		
 	}
 //	space0->landOn();
 //	a.bar = 3;
